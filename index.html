@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeydi в соцсетях</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* PC va Telefon uchun bir xil chiroyli to'q ko'k radial gradient fon */
+            background: radial-gradient(circle at top, #091f3d 0%, #020712 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* Asosiy konteyner - PC va Mobil uchun moslashuvchan */
+        .container {
+            width: 100%;
+            max-width: 480px; /* Telefonlar uchun optimal kenglik */
+            text-align: center;
+            padding: 40px 20px;
+            margin: auto;
+        }
+
+        /* Profil rasmi (Avatar) qismi */
+        .avatar-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #38bdf8;
+            /* Rasmning orqasidagi ko'k neon nuri (Glow effekt) */
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Matnlar uchun stillar */
+        .sub-text {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Ijtimoiy tarmoq tugmalari joylashuvi */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 10px;
+        }
+
+        .icon-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        }
+
+        /* Sichqoncha ustiga kelganda yoki bosilganda effektlar */
+        .icon-btn:hover, .icon-btn:active {
+            transform: scale(1.1);
+            filter: brightness(1.1);
+        }
+
+        /* Brend ranglari */
+        .telegram {
+            background-color: #24A1DE;
+            box-shadow: 0 4px 14px rgba(36, 161, 222, 0.3);
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            box-shadow: 0 4px 14px rgba(220, 39, 67, 0.3);
+        }
+
+        .tiktok {
+            background-color: #000000;
+            border: 1px solid #25f4ee;
+            box-shadow: 0 4px 14px rgba(37, 244, 238, 0.2);
+        }
+
+        /* To'lqinli ajratuvchi chiziq (Aynan rasmga o'xshash) */
+        .divider {
+            width: 45%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #334155, transparent);
+            margin: 35px auto;
+            position: relative;
+        }
+
+        .divider::after {
+            content: "~";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #475569;
+            font-size: 16px;
+        }
+
+        /* Aloqa bo'limi */
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-item {
+            font-size: 15px;
+            color: #ffffff;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #38bdf8;
+            border-bottom-color: #38bdf8;
+        }
+
+        /* ===================================================
+           RESPONSIVE: Kompyuter (PC) ekranlari uchun o'zgarishlar 
+           =================================================== */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 550px;
+                padding: 60px 30px;
+            }
+
+            .avatar-container {
+                width: 135px;
+                height: 135px;
+                margin-bottom: 25px;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .sub-text {
+                font-size: 15px;
+            }
+
+            .social-icons {
+                gap: 20px;
+            }
+
+            .icon-btn {
+                width: 56px;
+                height: 56px;
+                font-size: 24px;
+            }
+
+            .contact-item {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="avatar-container">
+            <img src="./photo_2026-05-23_21-53-19.jpg" alt="Logo" class="avatar">
+        </div>
+        
+        <p class="sub-text">PROGRAMMER<br>FRONTENT</p>
+        <h2 class="title">Jeydi в соцсетях</h2>
+
+        <div class="social-icons">
+            <a href="https://t.me/Toxirov_dev" target="_blank" class="icon-btn telegram">
+                <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="https://www.instagram.com/bot1rov.f?igsh=NmY4OWVneWM0MHM0" target="_blank" class="icon-btn instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@tokhirov476?_r=1&_t=ZS-96bcF0gOlRl" target="_blank" class="icon-btn tiktok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="contacts">
+            <div class="contact-item">
+                Звоните: <a href="tel:+998932805653">+998 (93) 280-56-53</a>
+            </div>
+            <div class="contact-item">
+                Пишите: <a href="mailto:toxirovf07@gmail.com">toxirovf07@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+    </div>
+
+</body>
+</html>
